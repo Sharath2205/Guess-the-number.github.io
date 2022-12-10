@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guess the number</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <!-- welcome-screen -->
+        <div class="welcome-screen" id="welcome-screen">
+          <h2>Guess the random number between 1-100</h2>
+          <img
+            src="./assets/Images/Thinking.png"
+            alt="Thinking image"
+            width="150"
+            height="200"
+          />
+
+          <section class="event-section">
+            <p>Select The Difficulty</p>
+            <div class="buttons">
+              <button class="easy button" onclick="easy()">
+                <span>Easy: 10 attempts</span>
+              </button>
+              <button class="hard button" onclick="hard()">
+                <span>Hard: 5 attempts</span>
+              </button>
+            </div>
+          </section>
+        </div>
+        <!-- game-area -->
+        <div class="game-area" id="game-area">
+          <div id="new-game">
+            <button class="button new-game" onclick="newGame()">
+              <span>New Game</span>
+            </button>
+          </div>
+          <section class="input-field">
+            <h3 id="result">Your Guess</h3>
+            <input
+              type="number"
+              id="input"
+              name="input"
+              min="1"
+              max="100"
+              maxlength="3"
+              placeholder="Enter your guess"
+              onchange="compare()"
+            />
+          </section>
+          <section class="stats">
+            <div class="prev-attempts">
+              <p>Number of attempts</p>
+              <h4 id="attempts">0</h4>
+            </div>
+            <div class="prev-guesses">
+              <p>Your previous guesses</p>
+              <h4 id="guesses">-</h4>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
